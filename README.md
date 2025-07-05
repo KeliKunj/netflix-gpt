@@ -1,7 +1,21 @@
 # Netflix-GPT
 
-- npx create-react-app app-name
-- Configured tailwind css
+- Create React App: npx create-react-app app-name
+- Configured TailwindCSS
+- Header
+- Routing of App
+- Login Form
+- Sign up Form
+- Form Validation
+- useRef Hook
+- Firebase Setup
+- Deploying our app to production
+- Create SignUp User Account
+- Implement Sign In User API 
+- Created Redux Store with userSlice
+- Implemented Sign Out
+- Update Profile API
+- fetch movies from IMDb
 
 # Features
 - Login/Sign Up
@@ -17,3 +31,5 @@
 - Netflix GPT
     - Search Bar
     - Movie Suggestions
+
+### FIREBASE URL : https://console.firebase.google.com/
