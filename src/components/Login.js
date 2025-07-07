@@ -10,6 +10,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = React.useState(true);
@@ -24,69 +25,49 @@ const Login = () => {
   const [errorMessage, setErrorMessage] = React.useState(null);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    //Validations
-    // checkFormValidationData(email, password);
+    e.preventDefault();   
     const message = checkFormValidationData(
       email.current.value,
       password.current.value
     );
-    setErrorMessage(message);
-    // console.log("Email:", email, "Password:", password, "Message:", message);
-
-    // if(message === null || !message){
-    //   // Sign In / Sign Up Logic
-    // }
+    setErrorMessage(message);   
 
     if (message) return;
     // Sign In / Sign Up Logic
-
-    if (!isSignInForm) {
-      //Sign Up Logic
+    if (!isSignInForm) {      
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
         password.current.value
       )
-        .then((userCredential) => {
-          // Signed up
-          const user = userCredential.user;
-          // console.log("User signed up:", user);
+        .then((userCredential) => {          
+          const user = userCredential.user;          
           updateProfile(auth.currentUser, {
             displayName: name.current.value,
-            photoURL:
-              "https://static.vecteezy.com/system/resources/previews/005/005/788/non_2x/user-icon-in-trendy-flat-style-isolated-on-grey-background-user-symbol-for-your-web-site-design-logo-app-ui-illustration-eps10-free-vector.jpg",
+            photoURL:USER_AVATAR,
           })
             .then(() => {
-              // Profile updated!
               // const { uid, email, displayName, photoURL } = user; // Not updated user value
               const { uid, email, displayName, photoURL } = auth.currentUser; // use auth= getAuth()
-              dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));
-              navigate("/browse");
+              dispatch(addUser({uid: uid, email: email, displayName: displayName, photoURL: photoURL}));              
             })
-            .catch((error) => {
-              // An error occurred
+            .catch((error) => {              
               setErrorMessage(error,message);
-            });
-          navigate("/browse");
+            });          
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
           setErrorMessage(errorCode + " : " + errorMessage);
         });
-    } else {
-      //Sign In Logic
+    } else {      
       signInWithEmailAndPassword(
         auth,
         email.current.value,
         password.current.value
       )
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          // console.log("User signed in:", user);
-          navigate("/browse");
+        .then((userCredential) => {          
+          const user = userCredential.user;          
         })
         .catch((error) => {
           const errorCode = error.code;
