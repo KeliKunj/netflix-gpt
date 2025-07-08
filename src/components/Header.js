@@ -35,9 +35,10 @@ const Header = () => {
     return () => unsubscribe(); // Unsubscribe from the auth state listener
   }, []);
   return (
-    <div className="p-2 px-24 w-full bg-gradient-to-b from-black absolute z-10 flex justify-between">
+    // <div className="px-24 w-full bg-gradient-to-b from-black absolute z-10 flex justify-between">
+    <div className="px-24 w-full bg-black absolute z-10 flex justify-between">
       <img
-        className="w-44"
+        className="w-40"
         src={LOGO}
         alt="header"
       />
@@ -46,10 +47,10 @@ const Header = () => {
           <img
             alt="user-icon"
             src={user?.photoURL}
-            className="w-10 h-10 mx-4"
+            className="w-8 h-8 mx-4"
           />
           <button
-            className="font-bold text-white border p-2 rounded-lg"
+            className="font-bold text-white text-sm border p-2 rounded-lg"
             onClick={handleSignOut}
           >
             Sign Out
