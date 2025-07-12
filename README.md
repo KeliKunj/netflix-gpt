@@ -47,6 +47,9 @@
 - Added .env file
 - Adding .env file to gitignore
 - Made our Site Responsive
+- Added NowWatching component to display current movie being watched.
+- Refactored MovieCard and MovieList components for improved functionality and state management.
+- Note: if firebase login throw error run: Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 
 # Features
 - Login/Sign Up
