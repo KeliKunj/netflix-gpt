@@ -4,7 +4,22 @@ export const API_OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3MThjYmE0OTk1YjlkODUwNTRkYzI2YTY5NmZlYjlkZiIsIm5iZiI6MTc1MTgwNTc1Mi4yMTksInN1YiI6IjY4NmE2ZjM4ZmM3ZDg1NmJiNmE5NWFiOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.x91-6gJReODXK8iRdsEQjBjNpW-mKr4f0OVmEJcl24A'
+    Authorization: 'Bearer '+ process.env.REACT_APP_TMDB_KEY,
   }
 };
 export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w500/";
+export const BG_URL = "https://assets.nflxext.com/ffe/siteui/vlv3/75b0ed49-75ab-4a63-bd45-37bc2c95cb73/web/IN-en-20250623-TRIFECTA-perspective_ae5833b7-6ce5-4e88-853e-014f38c506f1_large.jpg";
+export const SUGGESTED_LANGUAGES = [
+  { identifier: 'en', label: 'English' },
+  { identifier: 'hi', label: 'Hindi' },
+  { identifier: 'es', label: 'Spanish' },
+  { identifier: 'ta', label: 'Tamil' },
+  { identifier: 'te', label: 'Telugu' },
+  { identifier: 'kn', label: 'Kannada' },
+  { identifier: 'ml', label: 'Malayalam' },
+  { identifier: 'bn', label: 'Bengali' },
+  { identifier: 'gu', label: 'Gujarati' },
+  { identifier: 'mr', label: 'Marathi' },
+  { identifier: 'pa', label: 'Punjabi' }
+];
+export const OPENAI_API_KEY = process.env.REACT_APP_OPENAI_API_KEY;

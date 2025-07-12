@@ -35,6 +35,18 @@
 - TMDB Image CDN URL  
 - Made the Browse page amazing with Tailwind CSS
 - Used Custom Hooks: useNowPlayingMovies, usePopularMovies, useTopRatedMovies, useUpcomingMovies
+- GPT Search Page
+- GPT Search Bar
+- (BONUS) Multi-language Feature in our App
+- Get Open AI Api Key
+- Gpt Search API Call
+- fetched gptMoviesSuggestions from TMDB
+- created gptSlice added data
+- Reused Movie List component to make movie suggestion container
+- Memoization
+- Added .env file
+- Adding .env file to gitignore
+- Made our Site Responsive
 
 # Features
 - Login/Sign Up
@@ -52,3 +64,8 @@
     - Movie Suggestions
 
 ### FIREBASE URL : https://console.firebase.google.com/
+### TMDB URL : https://www.themoviedb.org/
+### OpenAI API : https://openai.com/index/openai-api/
+###              https://www.npmjs.com/package/openai/v/4.8.0
+### Alt: https://openrouter.ai/google/gemma-3n-e4b-it:free/api
+

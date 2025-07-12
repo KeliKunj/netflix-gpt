@@ -7,14 +7,12 @@ import {
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { USER_AVATAR } from "../utils/constants";
+import { BG_URL, USER_AVATAR } from "../utils/constants";
 
 const Login = () => {
-  const [isSignInForm, setIsSignInForm] = React.useState(true);
-  const navigate = useNavigate();
+  const [isSignInForm, setIsSignInForm] = React.useState(true);  
   const dispatch = useDispatch();
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -79,14 +77,15 @@ const Login = () => {
   return (
     <div>    
       <Header />    
-      <div className="absolute">
+      <div className="fixed">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/75b0ed49-75ab-4a63-bd45-37bc2c95cb73/web/IN-en-20250623-TRIFECTA-perspective_ae5833b7-6ce5-4e88-853e-014f38c506f1_large.jpg"
+          src={BG_URL}
           alt="background"
+          className="h-screen w-screen object-cover"
         />
       </div>
-      <form className="flex flex-col absolute bg-black my-32 mx-auto right-0 left-0 p-10 w-4/12 text-white rounded-lg text-sm bg-opacity-80">
-        <h1 className="font-bold text-3xl mb-4">
+      <form className="flex flex-col absolute bg-black my-32 mx-auto right-0 left-0 p-10 w-8/12 sm:w-1/2 md:w-4/12 text-white rounded-lg text-sm bg-opacity-80">
+        <h1 className="font-bold text-xl sm:text-3xl mb-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
         {!isSignInForm && (
